@@ -16,7 +16,7 @@ def decrypt_caesar_cipher(ciphertext, shift):
     return decrypted_text
 
 # Given cipher text
-ciphertext = "fxxmjbfxltnslymwtzlmymjbttixxmjrjybnymfbtqkbmtmfifajwdlwjfyrnsiytjfymjwzugzymjifwjistygjhfzxjtkxtrjbttihzyyjwxbtwpnslsjfwgdnsymjktwjxymjfxpjimjwbmjwjxmjbfxltnslymjuttwhmnqibmtinistypstbymfynybfxifsljwtzxytxyfdfsiyfqpytfbtqkxfniytmnrnfrltnslytxjjrdlwfsirtymjwfsi hfwwdmjwfhfpjfsifqnyyqjutytkgzyyjwkwtrrdrtymjw"
+ciphertext = "enterthegivencipherhere"
 
 # Try different shifts to find the correct decryption
 possible_decryptions = {}
