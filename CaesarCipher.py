@@ -1,28 +1,22 @@
-# Function to decrypt the cipher text using Caesar Cipher
 def decrypt_caesar_cipher(ciphertext, shift):
-    decrypted_text = ''
-    for char in ciphertext:
-        if char.isalpha():
-            shifted = ord(char) - shift
-            if char.islower():
-                if shifted < ord('a'):
-                    shifted += 26
-            elif char.isupper():
-                if shifted < ord('A'):
-                    shifted += 26
-            decrypted_text += chr(shifted)
-        else:
-            decrypted_text += char
-    return decrypted_text
+    return ''.join(
+        chr((ord(char) - shift - ord('A')) % 26 + ord('A')) if char.isupper()
+        else chr((ord(char) - shift - ord('a')) % 26 + ord('a')) if char.islower()
+        else char
+        for char in ciphertext
+    )
+
+def decrypt_all_shifts(ciphertext):
+    return {
+        shift: decrypt_caesar_cipher(ciphertext, shift)
+        for shift in range(26)
+    }
 
 # Given cipher text
 ciphertext = "enterthegivencipherhere"
 
-# Try different shifts to find the correct decryption
-possible_decryptions = {}
-for shift in range(1, 26):
-    decrypted_text = decrypt_caesar_cipher(ciphertext, shift)
-    possible_decryptions[shift] = decrypted_text
+# Get all possible decryptions
+possible_decryptions = decrypt_all_shifts(ciphertext)
 
 # Display all possible decrypted texts
-possible_decryptions
+print(possible_decryptions)
