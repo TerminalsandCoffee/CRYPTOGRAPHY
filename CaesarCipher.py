@@ -13,10 +13,11 @@ def decrypt_all_shifts(ciphertext):
     }
 
 # Given cipher text
-ciphertext = "enterthegivencipherhere"
+ciphertext = "enteryotext"
 
 # Get all possible decryptions
 possible_decryptions = decrypt_all_shifts(ciphertext)
 
 # Display all possible decrypted texts
-print(possible_decryptions)
+for shift, decrypted_text in possible_decryptions.items():
+    print(f"Shift {shift}: {decrypted_text[:50]}...")  # Print first 50 characters for brevity
